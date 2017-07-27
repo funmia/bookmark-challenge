@@ -10,13 +10,13 @@ feature 'Adding tags' do
     fill_in('tags', with: 'social')
     click_button("Add")
     link = Link.first
-    expect(link.tags.map(&:name).join).to eq ('social')
+    expect(link.tags.map(&:name)).to include('social')
   end
 
   scenario 'I can add multiple tags to a link' do
-    fill_in('tags', with: 'news, comedy' )
+    fill_in('tags', with: 'news comedy' )
     click_button("Add")
     link = Link.first
-    expect(link.tags.map(&:name).join(", ")).to eq ('news, comedy')
+    expect(link.tags.map(&:name)).to include('news', 'comedy')
   end
 end
