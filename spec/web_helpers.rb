@@ -14,3 +14,19 @@ def sign_up_mismatch
   fill_in('password_confirmation', with: 'rice')
   click_button 'Sign up'
 end
+
+def empty_email
+  visit('/users/new')
+  fill_in('email', with: nil)
+  fill_in('password', with: 'pizza')
+  fill_in('password_confirmation', with: 'pizza')
+  click_button 'Sign up'
+end
+
+def invalid_email
+  visit('/users/new')
+  fill_in('email', with: "invalid@email")
+  fill_in('password', with: 'pizza')
+  fill_in('password_confirmation', with: 'pizza')
+  click_button 'Sign up'
+end

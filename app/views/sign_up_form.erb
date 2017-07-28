@@ -1,12 +1,28 @@
-<form action='/users' method='post'>
-  <label for='email'>
-    Email: <input type='email' name='email' value='<%= @user.email %>'><br>
-  </label>
-  <label for='password'>
-    Password: <input name='password' type='password'>
-  </label>
-  <label for='confirm password'>
-    Confirm Password: <input name='password_confirmation' type='password'>
-  </label>
-  <input type='submit' value='Sign up'>
-</form>
+<DOCTYPE html>
+  <head>
+    <title>Sign form </title>
+  </head>
+  <body>
+
+  <style>
+  input:invalid {
+    border: 2px dashed red;
+  }
+  input:valid {
+    border: 2px solid black;
+  }
+  </style>
+
+  <form action='/users' method='post'>
+    <label for='email'>
+      Email: <input type='email' name='email' value='<%= @user.email %>' required><br>
+    </label>
+    <label for='password'>
+      Password: <input name='password' type='password'>
+    </label>
+    <label for='confirm password'>
+      Confirm Password: <input name='password_confirmation' type='password'>
+    </label>
+    <input type='submit' value='Sign up'>
+  </form>
+</body>
