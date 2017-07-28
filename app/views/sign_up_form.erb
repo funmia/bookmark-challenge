@@ -1,12 +1,12 @@
 <form action='/users' method='post'>
   <label for='email'>
-    Email: <input type='email' name='email'><br>
+    Email: <input type='email' name='email' value='<%= @user.email %>'><br>
   </label>
   <label for='password'>
     Password: <input name='password' type='password'>
   </label>
   <label for='confirm password'>
-    Password: <input name='password_confirmation' type='password'>
+    Confirm Password: <input name='password_confirmation' type='password'>
   </label>
   <input type='submit' value='Sign up'>
 </form>
