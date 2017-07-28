@@ -8,11 +8,11 @@
     <% if @user %>
       <h2>Welcome <%= @user.email %></h2>
     <% end %>
-    <% if flash[:errors] && !flash[:errors].empty? %>
+    <% if flash[:errors] %>
         Please refer to the follow errors below:
         <ul id='errors'>
           <% flash[:errors].each do |error| %>
-          <li><% error %></li>
+          <li><%= error %></li>
           <% end %>
         </ul>
       <% end %>

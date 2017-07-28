@@ -13,6 +13,6 @@ feature 'Validates email address' do
   scenario 'prevents duplicate registrations' do
     sign_up
     expect { sign_up }.not_to change(User, :count)
-    expect(page).to have_content ('This email already exists')
+    expect(page).to have_content ('Email is already taken')
   end
 end
